@@ -1,0 +1,35 @@
+.grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        border-color: red;
+    }
+}
+
+.img {
+    margin: 15px;
+}
+
+.card {
+    width: 100%;
+}
+
+.badge {
+    font-size: 24px;
+    padding: 30px 10px;
+}

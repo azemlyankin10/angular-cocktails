@@ -1,0 +1,12 @@
+<div class="example-flex-container">
+    <div class="example-button-container" *ngFor="let letter of alphabet">
+        <button
+            class="button"
+            mat-mini-fab
+            [style.background]="letter.color"
+            (click)="onClick(letter.letter)"
+        >
+            {{ letter.letter }}
+        </button>
+    </div>
+</div>

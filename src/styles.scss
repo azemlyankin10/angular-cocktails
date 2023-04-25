@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image: radial-gradient(circle at center center, #c8d9c9, #e5e5f7),
+        repeating-radial-gradient(
+            circle at center center,
+            #c8d9c9,
+            #c8d9c9,
+            10px,
+            transparent 20px,
+            transparent 10px
+        );
+    background-blend-mode: multiply;
+}
+
+.mdc-text-field {
+    overflow: visible !important;
+}
+
+.mdc-list-item__content {
+    position: relative;
+    color: rgb(100, 99, 99);
+    font-size: 15px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 5px;
+        height: 5px;
+        background-color: #000;
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,22 @@
+<a mat-button color="primary" [routerLink]="'/'">Home</a>
+
+<div class="wrap">
+    <div *ngIf="result" class="cocktail-details">
+        <h2>{{ result.strDrink }}</h2>
+        <img
+            [src]="result.strDrinkThumb"
+            alt="{{ result.strDrink }}"
+            class="cocktail-image"
+        />
+        <p><strong>Category:</strong> {{ result.strCategory }}</p>
+        <p><strong>Alcoholic:</strong> {{ result.strAlcoholic }}</p>
+        <p><strong>Glass:</strong> {{ result.strGlass }}</p>
+        <p><strong>Instructions:</strong> {{ result.strInstructions }}</p>
+        <p><strong>Ingredients:</strong></p>
+        <ul>
+            <li *ngFor="let ingredient of result['ingredients']">
+                {{ ingredient }}
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<form class="search-form">
+    <mat-form-field class="full-width">
+        <mat-label>Search</mat-label>
+        <input
+            type="search"
+            matInput
+            [formControl]="searchFormControl"
+            placeholder="Search cocktail"
+            (keyup)="onInput()"
+        />
+        <mat-error *ngIf="searchFormControl.hasError('required')">
+            Please enter a search term
+        </mat-error>
+    </mat-form-field>
+</form>

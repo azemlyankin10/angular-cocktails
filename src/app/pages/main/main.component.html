@@ -1,0 +1,11 @@
+<app-search></app-search>
+
+<app-categories></app-categories>
+
+<app-card-grid *ngIf="!isLoading" [cardsData]="data"></app-card-grid>
+<div class="noCocktails" *ngIf="data.length < 1 && !isLoading">
+    Choose cocktail
+</div>
+
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="error">{{ error }}</div>

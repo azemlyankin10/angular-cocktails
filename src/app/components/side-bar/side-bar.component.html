@@ -1,0 +1,36 @@
+<div class="grid">
+    <p class="badge" *ngIf="cocktails.length < 1">No liked cocktails</p>
+    <div class="btn-wrap" *ngFor="let cocktail of cocktails">
+        <a
+            class="btn"
+            [routerLink]="'cocktail'"
+            [queryParams]="{ cocktail: cocktail.idDrink }"
+            (click)="closeDrawer()"
+        >
+            <mat-card class="card">
+                <mat-card-header>
+                    <mat-card-title-group>
+                        <mat-card-title>{{ cocktail.strDrink }}</mat-card-title>
+                        <mat-card-subtitle>{{
+                            cocktail.strCategory
+                        }}</mat-card-subtitle>
+                        <img
+                            class="img"
+                            mat-card-sm-image
+                            [src]="cocktail.strDrinkThumb"
+                        />
+                    </mat-card-title-group>
+                </mat-card-header>
+            </mat-card>
+        </a>
+        <button
+            class="delete"
+            mat-mini-fab
+            color="primary"
+            aria-label="delete icon"
+            (click)="remove(cocktail.idDrink)"
+        >
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</div>

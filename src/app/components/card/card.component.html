@@ -1,0 +1,38 @@
+<mat-card class="card">
+    <mat-card-header>
+        <img
+            mat-card-avatar
+            [src]="cardData.strDrinkThumb"
+            alt="Photo of {{ cardData.strDrink }}"
+        />
+        <mat-card-title>{{ cardData.strDrink }}</mat-card-title>
+        <mat-card-subtitle>{{ cardData.strAlcoholic }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+        mat-card-image
+        [src]="cardData.strDrinkThumb"
+        alt="Photo of {{ cardData.strDrink }}"
+    />
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item *ngFor="let ingredient of ingredients">{{
+                ingredient
+            }}</mat-list-item>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+        <button
+            (click)="onLike(cardData.idDrink)"
+            mat-button
+            [color]="isLiked ? 'warn' : ''"
+        >
+            LIKE
+        </button>
+        <a
+            [routerLink]="'cocktail'"
+            [queryParams]="{ cocktail: cardData.idDrink }"
+            mat-button
+            >DETAILS</a
+        >
+    </mat-card-actions>
+</mat-card>
